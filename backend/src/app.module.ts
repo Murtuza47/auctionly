@@ -5,6 +5,7 @@ import { JwtModule } from '@nestjs/jwt'
 import { AuthController } from './auth/auth.controller'
 import { AuthGuard } from './auth/auth.guard'
 import { AuctionsController } from './http/auctions.controller'
+import { BidsController } from './http/bids.controller'
 import { Store } from './persistence/store'
 
 @Module({
@@ -17,7 +18,7 @@ import { Store } from './persistence/store'
       }),
     }),
   ],
-  controllers: [AuthController, AuctionsController],
+  controllers: [AuthController, AuctionsController, BidsController],
   providers: [Store, AuthGuard, { provide: APP_GUARD, useExisting: AuthGuard }],
 })
 export class AppModule {}
