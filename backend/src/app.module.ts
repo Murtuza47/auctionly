@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 import { JwtModule } from '@nestjs/jwt'
+import { Store } from './persistence/store'
 
 @Module({
   imports: [
@@ -12,5 +13,6 @@ import { JwtModule } from '@nestjs/jwt'
       }),
     }),
   ],
+  providers: [Store],
 })
 export class AppModule {}
